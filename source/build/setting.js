@@ -29,7 +29,7 @@ module.exports = {
         login: 'webui/admin/login.html'
     },
     port: {
-        express: 'http://localhost:3000',
+        express: 'http://localhost:4000',
         browserPort: '5000'
     }
 };
