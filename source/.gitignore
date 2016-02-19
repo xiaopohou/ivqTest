@@ -1,0 +1,11 @@
+# Project folders
+
+# 
+node_modules/
+www/ui/
+vendor/
+test_out/
+
+
+# Web Storm
+.idea/
