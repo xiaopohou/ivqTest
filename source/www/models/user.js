@@ -6,7 +6,10 @@ var userSchema = new mongoose.Schema({
     email: String,
     enabled: Boolean,
     createTime: {type: Date, default: Date.now()},
-    lastLoginTime: Date
+    lastLoginTime: Date,
+    wechatOpenId: String,
+    wechatSubscribe: Boolean,
+    wechatCancelSubscribeTime: Date
 }, {versionKey: false});
 
 userSchema.methods = {

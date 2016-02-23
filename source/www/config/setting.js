@@ -5,7 +5,28 @@ module.exports = {
     rootPath: 'ui/',
     ueImagesPath: 'assets/upload/ue/images/',
     coverPath: 'assets/upload/images/',
-    appId: 'wxd1ac5a4a22d2b009',
-    appSecret: '84555d25bf2ba27f8e7407a0cf7975c8',
-    token: 'ivqTest'
+    wechat: {
+        appId: 'wxd1ac5a4a22d2b009',
+        appSecret: '84555d25bf2ba27f8e7407a0cf7975c8',
+        token: 'ivqTest',
+        menu: {
+            "button": [
+                {
+                    "type": "view",
+                    "name": "ivqBlog",
+                    "url": "http://www.qianlailo.com/",
+                    "sub_button": []
+                },
+                {
+                    "name": "我的菜单",
+                    "sub_button": [
+                        {"type": "click", "name": "单图文", "key": "menu_1", "sub_button": []},
+                        {"type": "click", "name": "多图文", "key": "menu_2", "sub_button": []},
+                        {"type": "click", "name": "文本", "key": "menu_3", "sub_button": []}
+                    ]
+                }
+            ]
+        }
+    }
+
 };
