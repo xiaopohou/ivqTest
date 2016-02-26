@@ -17,7 +17,8 @@ var accounts = require('./routes/account'),
     comments = require('./routes/comment'),
     plugins = require('./routes/plugin'),
     settings = require('./routes/setting'),
-    wechats = require('./routes/wechat');
+    wechats = require('./routes/wechat'),
+    roleTests = require('./routes/roleTest');
 
 var app = express();
 
@@ -50,6 +51,7 @@ app.use(comments);
 app.use(plugins);
 app.use(settings);
 app.use(wechats);
+app.use(roleTests);
 
 app.use(function (req, res) {
     if (req.path.indexOf('/admin/login') >= 0) {

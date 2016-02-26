@@ -18,7 +18,7 @@ angular.module('app.admin.layout')
                     },
                     {
                         "title": "内容管理",
-                        "route": "article, category",
+                        "route": "article, category, tag, comment",
                         "icon": "",
                         "active": false,
                         "expanded": false,
@@ -44,6 +44,21 @@ angular.module('app.admin.layout')
                             {
                                 "title": "评论管理",
                                 "route": "comment",
+                                "icon": "",
+                                "active": false
+                            }
+                        ]
+                    },
+                    {
+                        "title": "角色场景管理",
+                        "route": "roleTest",
+                        "icon": "",
+                        "active": false,
+                        "expanded": false,
+                        "childs": [
+                            {
+                                "title": "场景管理",
+                                "route": "roleTest",
                                 "icon": "",
                                 "active": false
                             }

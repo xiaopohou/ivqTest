@@ -92,6 +92,28 @@ angular.module('app.admin')
                     label: '评论管理'
                 }
             })
+            .state('roleTest', {
+                url: '/roleTest/list',
+                templateUrl: 'app/role/role-test/list.tpl.html',
+                controller: 'ListRoleTestCtrl',
+                ncyBreadcrumb: {
+                    parent: function ($scope) {
+                        return 'home';
+                    },
+                    label: '角色场景管理'
+                }
+            })
+            .state('editRoleTest', {
+                url: '/roleTest/edit/:id?',
+                templateUrl: 'app/role/role-test/edit.tpl.html',
+                controller: 'EditRoleTestCtrl',
+                ncyBreadcrumb: {
+                    parent: function ($scope) {
+                        return 'roleTest';
+                    },
+                    label: '{{title}}'
+                }
+            })
             .state('account', {
                 url: '/setting/account',
                 templateUrl: 'app/setting/account/account.tpl.html',
