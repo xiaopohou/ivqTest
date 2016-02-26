@@ -3,7 +3,7 @@
         <div class="col-md-4">
             <div class="table-toolbar">
                 <div class="btn-group">
-                    <a ui-sref="editRoleTest()" class="btn blue"><i class="fa fa-plus"></i> 添加</a>
+                    <a ui-sref="editRoleScene()" class="btn blue"><i class="fa fa-plus"></i> 添加</a>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
             <td>{{row.title}}</td>
             <td>{{row.description}}</td>
             <td>{{row.createTime}}</td>
-            <td><a class="btn btn-xs purple" ui-sref="editRoleTest({id:row._id})"><i class="fa fa-edit"></i>编辑</a></td>
+            <td><a class="btn btn-xs purple" ui-sref="editRoleScene({id:row._id})"><i class="fa fa-edit"></i>编辑</a></td>
             <td><a class="btn btn-xs red" href="javascript:void(0)" ng-click="remove(row._id)"><i class="fa fa-times"></i>删除</a></td>
         </tr>
         </tbody>

@@ -51,14 +51,14 @@ angular.module('app.admin.layout')
                     },
                     {
                         "title": "角色场景管理",
-                        "route": "roleTest",
+                        "route": "roleScene",
                         "icon": "",
                         "active": false,
                         "expanded": false,
                         "childs": [
                             {
                                 "title": "场景管理",
-                                "route": "roleTest",
+                                "route": "roleScene",
                                 "icon": "",
                                 "active": false
                             }

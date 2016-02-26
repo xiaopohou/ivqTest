@@ -1,8 +1,8 @@
 'use strict';
 angular.module('app.admin.content')
-    .controller('ListRoleTestCtrl', ['$scope', '$state', 'SweetAlert', 'RoleTestService', 'Tool', function ($scope, $state, SweetAlert, RoleTestService, Tool) {
+    .controller('ListRoleSceneCtrl', ['$scope', '$state', 'SweetAlert', 'RoleSceneService', 'Tool', function ($scope, $state, SweetAlert, RoleSceneService, Tool) {
         $scope.getResource = function (params, paramsObj) {
-            return RoleTestService.loadList(paramsObj).then(function (response) {
+            return RoleSceneService.loadList(paramsObj).then(function (response) {
                 response.data.rows = _.each(response.data.rows, function (data) {
                     data.createTime = Tool.convertTime(data.createTime);
                 });
@@ -20,7 +20,7 @@ angular.module('app.admin.content')
             SweetAlert.deleteConfirm(
                 function (isConfirm) {
                     if (isConfirm) {
-                        RoleTestService.delete(id).then(function () {
+                        RoleSceneService.delete(id).then(function () {
                             SweetAlert.deleteSuccessfully();
                             $state.reload();
                         });
@@ -28,7 +28,7 @@ angular.module('app.admin.content')
                 });
         };
     }])
-    .controller('EditRoleTestCtrl', ['$scope', '$stateParams', '$state', 'SweetAlert', 'RoleTestService', 'Tool', function ($scope, $stateParams, $state, SweetAlert, RoleTestService, Tool) {
+    .controller('EditRoleSceneCtrl', ['$scope', '$stateParams', '$state', 'SweetAlert', 'RoleSceneService', 'Tool', function ($scope, $stateParams, $state, SweetAlert, RoleSceneService, Tool) {
         var id = $stateParams.id ? $stateParams.id : '';
         $scope.originModel = {};
         $scope.model = {};
@@ -36,7 +36,7 @@ angular.module('app.admin.content')
 
         $scope.initController = function () {
             if (id) {
-                RoleTestService.getById(id).then(function (data) {
+                RoleSceneService.getById(id).then(function (data) {
                     data.createTime = Tool.convertTime(data.createTime);
                     $scope.model = data;
                     $scope.originModel = Tool.deepCopy($scope.model);
@@ -47,14 +47,14 @@ angular.module('app.admin.content')
         $scope.save = function () {
             if (id) {
                 var modifyModel = Tool.trimSameProperties($scope.originModel, $scope.model);
-                RoleTestService.update(id, modifyModel).then(function () {
+                RoleSceneService.update(id, modifyModel).then(function () {
                     SweetAlert.updateSuccessfully();
-                    $state.go('roleTest');
+                    $state.go('roleScene');
                 });
             } else {
-                RoleTestService.insert($scope.model).then(function () {
+                RoleSceneService.insert($scope.model).then(function () {
                     SweetAlert.addSuccessfully();
-                    $state.go('roleTest');
+                    $state.go('roleScene');
                 });
             }
         };

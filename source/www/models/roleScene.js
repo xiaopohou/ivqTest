@@ -1,15 +1,15 @@
 var mongoose = require('mongoose');
 
-var roleTestSchema = new mongoose.Schema({
+var roleSceneSchema = new mongoose.Schema({
     name: String,
     title: String,
     description: String,
     createTime: {type: Date, default: Date.now()}
 }, {versionKey: false});
 
-roleTestSchema.methods = {};
+roleSceneSchema.methods = {};
 
-roleTestSchema.statics = {
+roleSceneSchema.statics = {
 
     list: function (options, cb) {
         var filter = options.filter || {};
@@ -48,4 +48,4 @@ roleTestSchema.statics = {
     }
 };
 
-module.exports = mongoose.model('RoleTest', roleTestSchema);
+module.exports = mongoose.model('RoleScene', roleSceneSchema);

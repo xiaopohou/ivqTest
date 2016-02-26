@@ -92,10 +92,10 @@ angular.module('app.admin')
                     label: '评论管理'
                 }
             })
-            .state('roleTest', {
-                url: '/roleTest/list',
-                templateUrl: 'app/role/role-test/list.tpl.html',
-                controller: 'ListRoleTestCtrl',
+            .state('roleScene', {
+                url: '/roleScene/list',
+                templateUrl: 'app/role/role-scene/list.tpl.html',
+                controller: 'ListRoleSceneCtrl',
                 ncyBreadcrumb: {
                     parent: function ($scope) {
                         return 'home';
@@ -103,13 +103,13 @@ angular.module('app.admin')
                     label: '角色场景管理'
                 }
             })
-            .state('editRoleTest', {
-                url: '/roleTest/edit/:id?',
-                templateUrl: 'app/role/role-test/edit.tpl.html',
-                controller: 'EditRoleTestCtrl',
+            .state('editRoleScene', {
+                url: '/roleScene/edit/:id?',
+                templateUrl: 'app/role/role-scene/edit.tpl.html',
+                controller: 'EditRoleSceneCtrl',
                 ncyBreadcrumb: {
                     parent: function ($scope) {
-                        return 'roleTest';
+                        return 'roleScene';
                     },
                     label: '{{title}}'
                 }
