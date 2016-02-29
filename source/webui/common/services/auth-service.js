@@ -16,7 +16,7 @@ angular.module('common.services')
                 if (isRemember) {
                     option = {'expires': moment.utc(data.expires).format(), 'path': '/'};
                 }
-                $cookies.putObject('globals', $rootScope.globals, option);
+                $cookies.putObject('ivqTest', $rootScope.globals, option);
             },
             clearCredentials: function () {
                 $rootScope.globals = {};

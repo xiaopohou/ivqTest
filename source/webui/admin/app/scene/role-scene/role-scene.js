@@ -28,7 +28,7 @@ angular.module('app.admin.content')
                 });
         };
     }])
-    .controller('EditRoleSceneCtrl', ['$scope', '$stateParams', '$state', 'SweetAlert', 'RoleSceneService', 'Tool', function ($scope, $stateParams, $state, SweetAlert, RoleSceneService, Tool) {
+    .controller('EditRoleSceneCtrl', ['$scope', '$stateParams', '$state', 'SweetAlert', 'RoleSceneService', 'RoleItemService', 'Tool', function ($scope, $stateParams, $state, SweetAlert, RoleSceneService, RoleItemService, Tool) {
         var id = $stateParams.id ? $stateParams.id : '';
         $scope.originModel = {};
         $scope.model = {};
@@ -57,6 +57,35 @@ angular.module('app.admin.content')
                     $state.go('roleScene');
                 });
             }
+        };
+
+        //角色成员
+        $scope.filterBy = {'roleScene': id};
+        $scope.getResource = function (params, paramsObj) {
+            return RoleItemService.loadList(paramsObj).then(function (response) {
+                response.data.rows = _.each(response.data.rows, function (data) {
+                    data.createTime = Tool.convertTime(data.createTime);
+                });
+                return {
+                    rows: response.data.rows,
+                    header: [],
+                    pagination: response.data.pagination,
+                    sortBy: '',
+                    sortOrder: ''
+                }
+            });
+        };
+
+        $scope.remove = function (id) {
+            SweetAlert.deleteConfirm(
+                function (isConfirm) {
+                    if (isConfirm) {
+                        RoleItemService.delete(id).then(function () {
+                            SweetAlert.deleteSuccessfully();
+                            $state.reload();
+                        });
+                    }
+                });
         };
 
         $scope.initController();

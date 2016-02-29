@@ -33,7 +33,7 @@ var appAdmin = angular.module('app.admin', [
     'app.admin.setting'
 ]);
 
-appAdmin.run(['$rootScope', '$window', '$location', '$cookies', '$http', function ($rootScope, $window, $location, $cookies, $http) {
+appAdmin.run(['$rootScope', '$window', '$location', '$cookies', '$http', '$stateParams', function ($rootScope, $window, $location, $cookies, $http, $stateParams) {
     //pagination setting
     $rootScope.paginationSetting = {
         'count': 15,
@@ -43,7 +43,7 @@ appAdmin.run(['$rootScope', '$window', '$location', '$cookies', '$http', functio
     };
 
     //cookie
-    $rootScope.globals = $cookies.getObject('globals') || {};
+    $rootScope.globals = $cookies.getObject('ivqTest') || {};
     if ($rootScope.globals.currentUser) {
         $http.defaults.headers.common['Authorization'] = $rootScope.globals.currentUser.token;
     }

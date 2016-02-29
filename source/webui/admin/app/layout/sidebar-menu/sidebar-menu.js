@@ -51,7 +51,7 @@ angular.module('app.admin.layout')
                     },
                     {
                         "title": "角色场景管理",
-                        "route": "roleScene",
+                        "route": "roleScene, roleItem",
                         "icon": "",
                         "active": false,
                         "expanded": false,
@@ -59,6 +59,12 @@ angular.module('app.admin.layout')
                             {
                                 "title": "场景管理",
                                 "route": "roleScene",
+                                "icon": "",
+                                "active": false
+                            },
+                            {
+                                "title": "成员管理",
+                                "route": "roleItem",
                                 "icon": "",
                                 "active": false
                             }

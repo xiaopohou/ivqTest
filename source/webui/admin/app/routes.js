@@ -94,7 +94,7 @@ angular.module('app.admin')
             })
             .state('roleScene', {
                 url: '/roleScene/list',
-                templateUrl: 'app/role/role-scene/list.tpl.html',
+                templateUrl: 'app/scene/role-scene/list.tpl.html',
                 controller: 'ListRoleSceneCtrl',
                 ncyBreadcrumb: {
                     parent: function ($scope) {
@@ -105,8 +105,19 @@ angular.module('app.admin')
             })
             .state('editRoleScene', {
                 url: '/roleScene/edit/:id?',
-                templateUrl: 'app/role/role-scene/edit.tpl.html',
+                templateUrl: 'app/scene/role-scene/edit.tpl.html',
                 controller: 'EditRoleSceneCtrl',
+                ncyBreadcrumb: {
+                    parent: function ($scope) {
+                        return 'roleScene';
+                    },
+                    label: '{{title}}'
+                }
+            })
+            .state('editRoleItem', {
+                url: '/roleItem/edit/:roleSceneId?/:id?',
+                templateUrl: 'app/scene/role-item/edit.tpl.html',
+                controller: 'EditRoleItemCtrl',
                 ncyBreadcrumb: {
                     parent: function ($scope) {
                         return 'roleScene';

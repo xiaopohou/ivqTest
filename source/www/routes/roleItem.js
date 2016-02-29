@@ -1,23 +1,23 @@
 var express = require('express'),
     router = express.Router(),
-    RoleScene = require('../models/roleScene'),
+    RoleItem = require('../models/roleItem'),
     jwtAuth = require('../config/jwtAuth.js');
 
 router
-    .get('/api/roleScenes', function (req, res, next) {
+    .get('/api/roleItems', function (req, res, next) {
         var options = {
             sortBy: {displayOrder:1},
             page: req.query.page - 1,
             count: req.query.count
         };
-        RoleScene.list(options, function (err, roleScenes) {
+        RoleItem.list(options, function (err, roleItems) {
             if (err)
                 return res.status(500).send(err);
-            RoleScene.count({}, function (err, total) {
+            RoleItem.count({}, function (err, total) {
                 if (err)
                     return res.status(500).send(err);
                 res.send({
-                    rows: roleScenes,
+                    rows: roleItems,
                     pagination: {
                         count: parseInt(req.query.count),
                         page: parseInt(req.query.page),
@@ -28,45 +28,31 @@ router
             });
         });
     })
-    .get('/api/roleScenes/all', function (req, res, next) {
-        var options = {
-            filter: {enabled: true},
-            sortBy: {displayOrder:1}
-        };
-        if(req.query.fields){
-            options.fields = req.query.fields.split(',').join(' ');
-        }
-        RoleScene.getAllByFilters(options, function (err, roleScenes) {
-            if (err)
-                return res.status(500).send(err);
-            res.send(roleScenes);
-        });
-    })
-    .get('/api/roleScenes/:id', function (req, res, next) {
-        RoleScene.getById(req.params.id, function (err, roleTest) {
+    .get('/api/roleItems/:id', function (req, res, next) {
+        RoleItem.getById(req.params.id, function (err, roleTest) {
             if (err)
                 return res.status(500).send(err);
             res.send(roleTest);
         });
     })
-    .post('/api/roleScenes', jwtAuth, function (req, res, next) {
-        var roleTest = new RoleScene(req.body);
+    .post('/api/roleItems', jwtAuth, function (req, res, next) {
+        var roleTest = new RoleItem(req.body);
         roleTest.save(function (err) {
             if (err)
                 return res.status(500).send(err);
             res.sendStatus(200);
         });
     })
-    .put('/api/roleScenes/:id', jwtAuth, function (req, res, next) {
+    .put('/api/roleItems/:id', jwtAuth, function (req, res, next) {
         var modify = req.body;
-        RoleScene.update2(req.params.id, modify, function (err) {
+        RoleItem.update2(req.params.id, modify, function (err) {
             if (err)
                 return res.status(500).send(err);
             res.sendStatus(200);
         });
     })
-    .delete('/api/roleScenes/:id', jwtAuth, function (req, res, next) {
-        RoleScene.delete(req.params.id, function (err) {
+    .delete('/api/roleItems/:id', jwtAuth, function (req, res, next) {
+        RoleItem.delete(req.params.id, function (err) {
             if (err)
                 return res.status(500).send(err);
             res.sendStatus(200);

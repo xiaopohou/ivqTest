@@ -2,10 +2,11 @@ var mongoose = require('mongoose');
 
 var roleItemSchema = new mongoose.Schema({
     name: String,
+    displayOrder: String,
     coverImg: String,
     description: String,
     createTime: {type: Date, default: Date.now()},
-    roleMatch: {type: mongoose.Schema.Types.ObjectId, ref: 'roleMatch'}
+    roleScene: {type: mongoose.Schema.Types.ObjectId, ref: 'roleScene'}
 }, {versionKey: false});
 
 roleItemSchema.methods = {};

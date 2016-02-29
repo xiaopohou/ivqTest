@@ -37,7 +37,7 @@ app.run(['$rootScope', '$state', '$stateParams', '$cookies', 'MetaTags', functio
     $rootScope.metaTags = MetaTags;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
-    var globals = $cookies.getObject('globals');
+    var globals = $cookies.getObject('ivqTest');
     if (globals && globals.currentUser) {
         $rootScope.currentUser = globals.currentUser.data;
     }
