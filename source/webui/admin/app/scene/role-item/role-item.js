@@ -1,10 +1,10 @@
 'use strict';
-angular.module('app.admin.content')
-    .controller('EditRoleItemCtrl', ['$scope', '$stateParams', '$state', '$timeout', 'SweetAlert', 'RoleItemService', 'Upload', 'Tool', function ($scope, $stateParams, $state, $timeout, SweetAlert, RoleItemService, Upload, Tool) {
+angular.module('app.admin.scene')
+    .controller('EditRoleItemCtrl', ['$scope', '$stateParams', '$state', '$timeout', '$window', 'SweetAlert', 'RoleItemService', 'Upload', 'Tool', function ($scope, $stateParams, $state, $timeout, $window, SweetAlert, RoleItemService, Upload, Tool) {
         var id = $stateParams.id ? $stateParams.id : '';
         $scope.originModel = {};
         $scope.model = {
-            roleSceneId: $stateParams.roleSceneId
+            roleScene: $stateParams.roleSceneId
         };
         $scope.title = id != '' ? '编辑角色成员' : '添加角色成员';
 
@@ -16,6 +16,10 @@ angular.module('app.admin.content')
                     $scope.originModel = Tool.deepCopy($scope.model);
                 });
             }
+        };
+
+        $scope.showOriginImg = function(){
+            $('.img-link').fancybox();
         };
 
         $scope.uploadImage = function (file, errFiles) {
@@ -48,13 +52,15 @@ angular.module('app.admin.content')
                 RoleItemService.update(id, modifyModel).then(function () {
                     SweetAlert.updateSuccessfully();
                     //TODO:url跳转
-                    $state.go('roleScene');
+                    //$state.go('roleScene');
+                    $window.location.href= '/admin/roleScene/edit/' + $stateParams.roleSceneId;
                 });
             } else {
                 RoleItemService.insert($scope.model).then(function () {
                     SweetAlert.addSuccessfully();
                     //TODO:url跳转
-                    $state.go('roleScene');
+                    //$state.go('roleScene');
+                    $window.location.href= '/admin/roleScene/edit/' + $stateParams.roleSceneId;
                 });
             }
         };

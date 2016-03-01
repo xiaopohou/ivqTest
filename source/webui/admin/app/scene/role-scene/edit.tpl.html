@@ -5,7 +5,7 @@
                 <div class="tabtable table-custom table-full-width">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="#tab_1" data-toggle="tab">基本信息</a>
+                            <a href="#tab_1" data-toggle="tab">场景</a>
                         </li>
                         <li>
                             <a href="#tab_2" data-toggle="tab">角色成员</a>
@@ -24,6 +24,9 @@
                                         <div ng-show="form.$submitted || form.name.$touched">
                                             <span ng-show="form.name.$error.required" class="help-block">请填写角色场景名称</span>
                                         </div>
+                                    </div>
+                                    <div class="col-md-2" ng-if="model._id">
+                                        <label class="form-text"><a href="/roleScene/{{model._id}}">预览</a></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -56,8 +59,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tab_2">
-                            <a ui-sref="editRoleItem({roleSceneId:model._id})" class="btn blue"><i class="fa fa-plus"></i> 添加成员</a>
+                        <div class="tab-pane role-item" id="tab_2">
+                            <a ui-sref="editRoleItem({roleSceneId:model._id})" class="btn blue"><i class="fa fa-plus"></i> 添加</a>
                             <div tasty-table bind-resource-callback="getResource" bind-init="paginationSetting" bind-filters="filterBy">
                                 <table class="table datatable table-striped table-bordered table-hover">
                                     <thead>
@@ -65,7 +68,7 @@
                                         <th width="150">
                                             角色成员
                                         </th>
-                                        <th width="50">
+                                        <th width="60">
                                             排序
                                         </th>
                                         <th>

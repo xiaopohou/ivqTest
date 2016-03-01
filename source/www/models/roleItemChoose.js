@@ -4,7 +4,7 @@ var roleItemChooseSchema = new mongoose.Schema({
     key: String,
     openid: String,
     createTime: {type: Date, default: Date.now()},
-    roleItem: {type: mongoose.Schema.Types.ObjectId, ref: 'roleItem'}
+    roleItem: {type: mongoose.Schema.Types.ObjectId, ref: 'RoleItem'}
 }, {versionKey: false});
 
 roleItemChooseSchema.methods = {};
@@ -34,6 +34,7 @@ roleItemChooseSchema.statics = {
 
     getById: function (id, cb) {
         this.findOne({_id: id})
+            .populate('roleItem')
             .exec(cb);
     },
 

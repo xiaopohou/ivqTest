@@ -3,27 +3,22 @@
 <head>
     <title ng-bind="metaTags.title"></title>
     <meta charset="UTF-8">
-    <meta name="keywords" content="{{metaTags.keywords}}">
-    <meta name="description" content="{{metaTags.description}}">
     <base href="/">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <!-- inject:css -->
     <!-- endinject -->
 </head>
 <body>
-<nav-menu></nav-menu>
 
-<div ui-view></div>
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <p><span ng-bind="$root.packageInfo.copyrightYear"></span> <span ng-bind-html="$root.copysymbol"></span> <a
-                    ui-sref="/" ng-bind="$root.packageInfo.name"></a> <span
-                    ng-bind="$root.author"></span></p>
+<div class="container">
+    <div class="row">
+        <div class="main">
+            <div class="col-sm-12">
+                <div ui-view></div>
+            </div>
         </div>
     </div>
-</footer>
+</div>
 
 <!-- inject:js -->
 <!-- endinject -->

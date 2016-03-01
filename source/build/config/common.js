@@ -27,7 +27,8 @@ module.exports = {
             './webui/plugins/font-awesome/font-awesome.min.css',
             './lib/bootstrap/css/bootstrap.min.css',
             './lib/sweetalert/sweetalert.css',
-            './lib/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css'
+            './lib/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css',
+            './lib/fancybox/jquery.fancybox.css'
         ],
         js: [
             './lib/jquery/jquery.min.js',
@@ -45,7 +46,8 @@ module.exports = {
             './lib/ueditor/ueditor.all.min.js',
             './lib/ueditor/angular-ueditor.min.js',
             './lib/checklist-model/checklist-model.js',
-            './lib/ueditor/third-party/SyntaxHighlighter/shCore.js'
+            './lib/ueditor/third-party/SyntaxHighlighter/shCore.js',
+            './lib/fancybox/jquery.fancybox.js'
         ]
     }
 };

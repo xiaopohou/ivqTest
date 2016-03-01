@@ -9,6 +9,7 @@ angular.module('app.admin.templates', []);
 angular.module('app.admin.common', ['common.services']);
 angular.module('app.admin.layout', ['common.services']);
 angular.module('app.admin.content', ['common.services']);
+angular.module('app.admin.scene', ['common.services']);
 angular.module('app.admin.setting', ['common.services']);
 
 var appAdmin = angular.module('app.admin', [
@@ -30,6 +31,7 @@ var appAdmin = angular.module('app.admin', [
     'app.admin.common',
     'app.admin.layout',
     'app.admin.content',
+    'app.admin.scene',
     'app.admin.setting'
 ]);
 

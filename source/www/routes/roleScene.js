@@ -43,15 +43,15 @@ router
         });
     })
     .get('/api/roleScenes/:id', function (req, res, next) {
-        RoleScene.getById(req.params.id, function (err, roleTest) {
+        RoleScene.getById(req.params.id, function (err, roleScene) {
             if (err)
                 return res.status(500).send(err);
-            res.send(roleTest);
+            res.send(roleScene);
         });
     })
     .post('/api/roleScenes', jwtAuth, function (req, res, next) {
-        var roleTest = new RoleScene(req.body);
-        roleTest.save(function (err) {
+        var roleScene = new RoleScene(req.body);
+        roleScene.save(function (err) {
             if (err)
                 return res.status(500).send(err);
             res.sendStatus(200);

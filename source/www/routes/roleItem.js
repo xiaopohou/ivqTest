@@ -29,15 +29,15 @@ router
         });
     })
     .get('/api/roleItems/:id', function (req, res, next) {
-        RoleItem.getById(req.params.id, function (err, roleTest) {
+        RoleItem.getById(req.params.id, function (err, roleItem) {
             if (err)
                 return res.status(500).send(err);
-            res.send(roleTest);
+            res.send(roleItem);
         });
     })
     .post('/api/roleItems', jwtAuth, function (req, res, next) {
-        var roleTest = new RoleItem(req.body);
-        roleTest.save(function (err) {
+        var roleItem = new RoleItem(req.body);
+        roleItem.save(function (err) {
             if (err)
                 return res.status(500).send(err);
             res.sendStatus(200);

@@ -4,7 +4,9 @@ var roleSceneSchema = new mongoose.Schema({
     name: String,
     title: String,
     description: String,
-    createTime: {type: Date, default: Date.now()}
+    count: {type: Number, default: 0},
+    createTime: {type: Date, default: Date.now()},
+    roleItems: [{type: mongoose.Schema.Types.ObjectId, ref: 'RoleItem'}]
 }, {versionKey: false});
 
 roleSceneSchema.methods = {};
@@ -34,6 +36,7 @@ roleSceneSchema.statics = {
 
     getById: function (id, cb) {
         this.findOne({_id: id})
+            .populate('roleItem')
             .exec(cb);
     },
 

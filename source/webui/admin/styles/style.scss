@@ -557,7 +557,6 @@ Page title
   color: #888;
 }
 
-
 /********************
  GENERAL UI ELEMENTS 
 *********************/
@@ -809,4 +808,22 @@ label.form-control {
   label {
     margin: 0 15px 0 0;
   }
+}
+
+//角色成员
+.role-item {
+  padding: 0 10px;
+  a {
+    margin: 0 0 10px 0;
+  }
+}
+
+.img-upload {
+  margin-top: 2px;
+}
+
+.img-link {
+  margin-top: 5px;
+  display: block;
+  cursor: pointer;
 }

@@ -40,12 +40,14 @@
                                     <label class="control-label col-md-2">封面图</label>
 
                                     <div class="col-md-4">
-                                        <button type="file" ngf-select="uploadImage($file, $invalidFiles)"
+                                        <button class="img-upload" type="file" ngf-select="uploadImage($file, $invalidFiles)"
                                                 accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
                                             上传图片
                                         </button>
                                         <div ng-if="model.coverImg">
-                                            <img ng-src="{{model.coverImg}}"/>
+                                            <a class='img-link' href="{{model.coverImg}}" ng-click="showOriginImg()">
+                                                <img ng-src="{{model.coverImg}}" width="300" alt="" />
+                                            </a>
                                         </div>
                                         <!--File:-->
                                         <!--<div>{{f.name}} {{errFile.name}} {{errFile.$error}}-->

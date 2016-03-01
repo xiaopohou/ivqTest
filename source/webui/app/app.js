@@ -8,6 +8,7 @@ angular.module('app.templates', []);
 angular.module('app.home', []);
 angular.module('app.nav', []);
 angular.module('app.article', ['ui.bootstrap', 'common.services']);
+angular.module('app.scene', ['common.services']);
 
 var app = angular.module('app', [
     'ngCookies',
@@ -23,7 +24,8 @@ var app = angular.module('app', [
     'app.templates',
     'app.home',
     'app.nav',
-    'app.article'
+    'app.article',
+    'app.scene'
 ]);
 
 app.controller('AppCtrl', ['$rootScope', '$sce', 'PackageInfo', function ($rootScope, $sce, PackageInfo) {

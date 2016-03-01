@@ -1,0 +1,8 @@
+<div class="role-result">
+    <p>姓名：{{model.key}}</p>
+    <p>角色场景：{{model.roleItem.roleScene.name}}</p>
+    <p>角色成员：{{model.roleItem.name}}</p>
+    <p>角色描述：{{model.roleItem.roleScene.title}}</p>
+    <p><a ui-sref="roleScene({id:model.roleItem.roleScene._id})" class="btn btn-primary">重新测试</a></p>
+    <p><a ui-sref="roleScene({id:model.roleItem.roleScene._id})" class="btn btn-info">炫耀一下</a></p>
+</div>

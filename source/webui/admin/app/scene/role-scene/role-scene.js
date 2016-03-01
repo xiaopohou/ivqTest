@@ -1,5 +1,5 @@
 'use strict';
-angular.module('app.admin.content')
+angular.module('app.admin.scene')
     .controller('ListRoleSceneCtrl', ['$scope', '$state', 'SweetAlert', 'RoleSceneService', 'Tool', function ($scope, $state, SweetAlert, RoleSceneService, Tool) {
         $scope.getResource = function (params, paramsObj) {
             return RoleSceneService.loadList(paramsObj).then(function (response) {
