@@ -12,9 +12,6 @@ angular.module('app.article')
                 $scope.model.userName = 'ivqBlog';
                 $scope.model.email = $rootScope.currentUser.email;
             }
-            $timeout(function(){
-                SyntaxHighlighter.highlight();
-            }, 0);
         };
 
         $scope.redirect = function(){

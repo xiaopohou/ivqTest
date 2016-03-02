@@ -3,8 +3,9 @@ angular.module('app.admin.scene')
     .controller('EditRoleItemCtrl', ['$scope', '$stateParams', '$state', '$timeout', '$window', 'SweetAlert', 'RoleItemService', 'Upload', 'Tool', function ($scope, $stateParams, $state, $timeout, $window, SweetAlert, RoleItemService, Upload, Tool) {
         var id = $stateParams.id ? $stateParams.id : '';
         $scope.originModel = {};
+        $scope.roleSceneId = $stateParams.roleSceneId;
         $scope.model = {
-            roleScene: $stateParams.roleSceneId
+            roleScene: $scope.roleSceneId
         };
         $scope.title = id != '' ? '编辑角色成员' : '添加角色成员';
 

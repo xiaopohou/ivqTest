@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var roleSceneSchema = new mongoose.Schema({
     name: String,
     title: String,
+    coverImg: String,
     description: String,
     count: {type: Number, default: 0},
     createTime: {type: Date, default: Date.now()},

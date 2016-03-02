@@ -13,8 +13,8 @@ module.exports = {
             "button": [
                 {
                     "type": "view",
-                    "name": "ivqBlog",
-                    "url": "http://www.qianlailo.com/",
+                    "name": "火影忍者",
+                    "url": "http://120.25.87.172/roleScene/56d68ee7b8df978c0c758379",
                     "sub_button": []
                 },
                 {

@@ -3,8 +3,7 @@ module.exports = {
     front: {
         css: [
             './lib/bootstrap/css/bootstrap.min.css',
-            './lib/sweetalert/sweetalert.css',
-            './lib/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css'
+            './lib/sweetalert/sweetalert.css'
         ],
         js: [
             './lib/jquery/jquery.min.js',
@@ -18,8 +17,7 @@ module.exports = {
             './lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
             './lib/underscore/underscore-min.js',
             './lib/moment/moment.js',
-            './lib/moment/zh-cn.js',
-            './lib/ueditor/third-party/SyntaxHighlighter/shCore.js'
+            './lib/moment/zh-cn.js'
         ]
     },
     admin: {

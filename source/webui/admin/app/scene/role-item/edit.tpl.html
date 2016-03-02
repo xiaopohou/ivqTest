@@ -40,13 +40,14 @@
                                     <label class="control-label col-md-2">封面图</label>
 
                                     <div class="col-md-4">
-                                        <button class="img-upload" type="file" ngf-select="uploadImage($file, $invalidFiles)"
+                                        <button class="img-upload" type="file"
+                                                ngf-select="uploadImage($file, $invalidFiles)"
                                                 accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
                                             上传图片
                                         </button>
                                         <div ng-if="model.coverImg">
                                             <a class='img-link' href="{{model.coverImg}}" ng-click="showOriginImg()">
-                                                <img ng-src="{{model.coverImg}}" width="300" alt="" />
+                                                <img ng-src="{{model.coverImg}}" width="300" alt=""/>
                                             </a>
                                         </div>
                                         <!--File:-->
@@ -81,7 +82,8 @@
             </div>
             <div class="form-actions fluid">
                 <div class="col-md-offset-2 col-md-9">
-                    <input type="button" name="cancel" class="btn dark" value="取消" ui-sref="roleItem"/>
+                    <input type="button" name="cancel" class="btn dark" value="取消"
+                           ui-sref="editRoleScene({id:roleSceneId})"/>
                     <input type="submit" name="save" ng-disabled="form.$pristine || form.$invalid" class="btn blue"
                            value="保存"
                            ng-click="save()"/>

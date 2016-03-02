@@ -1,30 +1,30 @@
 <div class="scene">
-    <div class="title">
-        <p>{{roleScene.name}}</p>
-
-        <p>{{roleScene.title}}</p>
-
-        <p>{{roleScene.description}}</p>
-    </div>
-    <div class="search-form">
-        <form class="form-horizontal" name="form">
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" name="key" ng-model="model.key"
-                           required="" placeholder="请输入姓名"/>
+    <img class="coverImg" ng-if="roleScene.coverImg" ng-src="{{roleScene.coverImg}}"/>
+    <div class="container role-scene">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{roleScene.title}}</h1>
+                <p class="description">{{roleScene.description}}</p>
+                <form class="form-horizontal" name="form">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="key" ng-model="model.key"
+                                   required="" placeholder="请输入姓名"/>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary"
+                                    ng-disabled="form.$pristine || form.$invalid"
+                                    ng-click="submit()" style="width:40%;">开始测试
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="text-center">
+                    有<span class="count">{{roleScene.count}}</span>人参与
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <button type="submit" class="btn btn-primary"
-                            ng-disabled="form.$pristine || form.$invalid"
-                            ng-click="submit()">确定
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="">
-        有{{roleScene.count}}人参与
+        </div>
     </div>
 </div>

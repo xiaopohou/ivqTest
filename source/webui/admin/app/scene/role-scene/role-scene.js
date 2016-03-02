@@ -28,7 +28,7 @@ angular.module('app.admin.scene')
                 });
         };
     }])
-    .controller('EditRoleSceneCtrl', ['$scope', '$stateParams', '$state', 'SweetAlert', 'RoleSceneService', 'RoleItemService', 'Tool', function ($scope, $stateParams, $state, SweetAlert, RoleSceneService, RoleItemService, Tool) {
+    .controller('EditRoleSceneCtrl', ['$scope', '$stateParams', '$state', '$timeout', 'SweetAlert', 'RoleSceneService', 'RoleItemService', 'Upload', 'Tool', function ($scope, $stateParams, $state, $timeout, SweetAlert, RoleSceneService, RoleItemService, Upload, Tool) {
         var id = $stateParams.id ? $stateParams.id : '';
         $scope.originModel = {};
         $scope.model = {};
@@ -42,6 +42,34 @@ angular.module('app.admin.scene')
                     $scope.originModel = Tool.deepCopy($scope.model);
                 });
             }
+        };
+
+        $scope.uploadImage = function (file, errFiles) {
+            $scope.f = file;
+            $scope.errFile = errFiles && errFiles[0];
+            if (file) {
+                file.upload = Upload.upload({
+                    url: '/api/uploads',
+                    data: {file: file}
+                });
+
+                file.upload.then(function (response) {
+                    $timeout(function () {
+                        file.result = response.data.success;
+                        $scope.model.coverImg = response.data.imgUrl;
+                    });
+                }, function (response) {
+                    if (response.status > 0)
+                        $scope.errorMsg = response.status + ': ' + response.data;
+                }, function (evt) {
+                    file.progress = Math.min(100, parseInt(100.0 *
+                        evt.loaded / evt.total));
+                });
+            }
+        };
+
+        $scope.showOriginImg = function(){
+            $('.img-link').fancybox();
         };
 
         $scope.save = function () {
