@@ -1,6 +1,6 @@
 "use strict";
 angular.module('app.scene')
-    .controller('RoleSceneCtrl', ['$scope', '$stateParams', '$state', '$window', 'SweetAlert', 'RoleItemChooseService', 'roleScene', function ($scope, $stateParams, $state, $window, SweetAlert, RoleItemChooseService, roleScene) {
+    .controller('RoleSceneCtrl', ['$scope', '$stateParams', '$state', '$window', 'RoleItemChooseService', 'roleScene', function ($scope, $stateParams, $state, $window, RoleItemChooseService, roleScene) {
         $scope.roleScene = roleScene;
 
         $scope.model = {
