@@ -12,9 +12,7 @@ angular.module('app.scene', ['common.services']);
 
 var app = angular.module('app', [
     'ngCookies',
-    'ngSweetAlert',
     'ui.router',
-    'ui.router.metatags',
     'ui.bootstrap',
     'common.config',
     'common.directives',
@@ -23,7 +21,6 @@ var app = angular.module('app', [
     'common.util',
     'app.templates',
     'app.home',
-    'app.nav',
     'app.article',
     'app.scene'
 ]);
@@ -35,8 +32,7 @@ app.controller('AppCtrl', ['$rootScope', '$sce', 'PackageInfo', function ($rootS
     $rootScope.author = 'by' + $rootScope.packageInfo.author + '.';
 }]);
 
-app.run(['$rootScope', '$state', '$stateParams', '$cookies', 'MetaTags', function ($rootScope, $state, $stateParams, $cookies, MetaTags) {
-    $rootScope.metaTags = MetaTags;
+app.run(['$rootScope', '$state', '$stateParams', '$cookies', function ($rootScope, $state, $stateParams, $cookies) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     var globals = $cookies.getObject('ivqTest');

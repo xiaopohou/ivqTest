@@ -1,13 +1,17 @@
 <div class="scene">
-    <img class="coverImg" ng-if="model.roleItem.roleScene.coverImg" ng-src="{{model.roleItem.roleScene.coverImg}}"/>
-    <div class="container item-result">
+    <img class="coverImg" ng-if="roleScene.coverImg" ng-src="{{roleScene.coverImg}}"/>
+    <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>{{model.key}}，你在{{model.roleItem.roleScene.name}}中居然是{{model.roleItem.name}}</h1>
-                <img class="coverImg" ng-src="{{model.roleItem.coverImg}}" ng-if="model.roleItem.coverImg"/>
-                <p class="description">{{model.roleItem.description}}</p>
-                <p class="text-center"><a ui-sref="roleScene({id:model.roleItem.roleScene._id})" class="btn btn-primary action">重新测试</a><a
-                        ui-sref="roleScene({id:model.roleItem.roleScene._id})" class="btn btn-info action">炫耀一下</a></p>
+                <h3>{{roleItemChoose.key}}，你在{{roleScene.name}}中是{{roleItem.name}}</h3>
+                <img class="coverImg" ng-src="{{roleItem.coverImg}}" ng-if="roleItem.coverImg"/>
+                <p class="description">{{roleItem.description}}</p>
+                <div class="text-center" ng-if="!isShare"><a ui-sref="roleScene({id:roleScene._id})"
+                                            class="btn btn-primary action">重新测试</a><a
+                        ui-sref="roleScene({id:roleScene._id})" class="btn btn-info action">炫耀一下</a></div>
+                <div class="text-center" ng-if="isShare"><a ui-sref="roleScene({id:roleScene._id, action:'result'})"
+                                            class="btn btn-primary action">我也要测试</a><a
+                        ui-sref="roleScene({id:roleScene._id})" class="btn btn-info action">更多测试</a></div>
             </div>
         </div>
     </div>

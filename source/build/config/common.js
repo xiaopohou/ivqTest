@@ -2,8 +2,7 @@
 module.exports = {
     front: {
         css: [
-            './lib/bootstrap/css/bootstrap.min.css',
-            './lib/sweetalert/sweetalert.css'
+            './lib/bootstrap/css/bootstrap.min.css'
         ],
         js: [
             './lib/jquery/jquery.min.js',
@@ -12,7 +11,6 @@ module.exports = {
             './lib/angular-cookies/angular-cookies.min.js',
             './lib/angular-ui-router/angular-ui-router.min.js',
             './lib/ui-router-metatags/ui-router-metatags.min.js',
-            './lib/sweetalert/sweetalert.min.js',
             './lib/angular-bootstrap/ui-bootstrap.min.js',
             './lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
             './lib/underscore/underscore-min.js',

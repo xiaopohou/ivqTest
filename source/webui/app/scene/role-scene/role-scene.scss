@@ -1,23 +1,18 @@
 .scene {
+  padding: 0 0 20px 0;
   .coverImg {
     width: 100%;
     display: block;
   }
-  h1 {
-    margin: 5px 0 5px 0;
+  h3 {
+    margin: 10px 0;
   }
-  .role-scene {
-    padding:0 20px;
-    .count {
-      color: #F00;
-      padding: 0 2px;
-    }
-  }
-  .item-result {
-    padding:0 20px;
+  .count {
+    color: #F00;
+    padding: 0 2px;
   }
   .action {
-    margin: 15px 15px 0 0;
+    margin: 0 15px 0 0;
   }
 }
 

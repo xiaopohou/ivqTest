@@ -1,6 +1,6 @@
 "use strict";
 angular.module('app.article')
-    .controller('PostCtrl', ['$rootScope', '$scope', '$stateParams', '$sce', '$state', '$timeout', '$window', 'SweetAlert', 'ArticleService', 'CommentService', 'Tool', 'article', function ($rootScope, $scope, $stateParams, $sce, $state, $timeout, $window, SweetAlert, ArticleService, CommentService, Tool, article) {
+    .controller('PostCtrl', ['$rootScope', '$scope', '$stateParams', '$sce', '$state', '$timeout', '$window', 'ArticleService', 'CommentService', 'Tool', 'article', function ($rootScope, $scope, $stateParams, $sce, $state, $timeout, $window, ArticleService, CommentService, Tool, article) {
         $scope.model = {};
 
         $scope.initController = function () {

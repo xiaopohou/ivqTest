@@ -1,14 +1,6 @@
 'use strict';
 angular.module('app')
-    .config(["$locationProvider", '$stateProvider', '$urlRouterProvider', 'UIRouterMetatagsProvider', function ($locationProvider, $stateProvider, $urlRouterProvider, UIRouterMetatagsProvider) {
-
-        //TODO:
-        UIRouterMetatagsProvider
-            .setTitlePrefix('')
-            .setTitleSuffix(' | ivqTest')
-            .setDefaultTitle('ivqTest：爱测试')
-            .setOGURL(true);
-
+    .config(["$locationProvider", '$stateProvider', function ($locationProvider, $stateProvider) {
         $locationProvider.html5Mode(true).hashPrefix('!');
 
         $stateProvider
@@ -26,7 +18,7 @@ angular.module('app')
                 }
             })
             .state('roleItemChoose', {
-                url: '/roleItemChoose/:id',
+                url: '/roleItemChoose/:id/:action',
                 templateUrl: 'scene/role-item-choose/role-item-choose.tpl.html',
                 controller: 'RoleItemChooseCtrl',
                 resolve: {
