@@ -17,39 +17,6 @@ angular.module('app.admin.layout')
                         "childs": []
                     },
                     {
-                        "title": "内容管理",
-                        "route": "article, category, tag, comment",
-                        "icon": "",
-                        "active": false,
-                        "expanded": false,
-                        "childs": [
-                            {
-                                "title": "类别管理",
-                                "route": "category",
-                                "icon": "",
-                                "active": false
-                            },
-                            {
-                                "title": "标签管理",
-                                "route": "tag",
-                                "icon": "",
-                                "active": false
-                            },
-                            {
-                                "title": "文章管理",
-                                "route": "article",
-                                "icon": "",
-                                "active": false
-                            },
-                            {
-                                "title": "评论管理",
-                                "route": "comment",
-                                "icon": "",
-                                "active": false
-                            }
-                        ]
-                    },
-                    {
                         "title": "角色场景管理",
                         "route": "roleScene, roleItem",
                         "icon": "",
@@ -80,12 +47,6 @@ angular.module('app.admin.layout')
                             {
                                 "title": "账号设置",
                                 "route": "account",
-                                "icon": "",
-                                "active": false
-                            },
-                            {
-                                "title": "网站设置",
-                                "route": "site",
                                 "icon": "",
                                 "active": false
                             }

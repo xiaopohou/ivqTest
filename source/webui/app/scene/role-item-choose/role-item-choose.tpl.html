@@ -7,12 +7,87 @@
                 <img class="coverImg" ng-src="{{roleItem.coverImg}}" ng-if="roleItem.coverImg"/>
                 <p class="description">{{roleItem.description}}</p>
                 <div class="text-center" ng-if="!isShare"><a ui-sref="roleScene({id:roleScene._id})"
-                                            class="btn btn-primary action">重新测试</a><a
-                        ui-sref="roleScene({id:roleScene._id})" class="btn btn-info action">炫耀一下</a></div>
-                <div class="text-center" ng-if="isShare"><a ui-sref="roleScene({id:roleScene._id, action:'result'})"
-                                            class="btn btn-primary action">我也要测试</a><a
-                        ui-sref="roleScene({id:roleScene._id})" class="btn btn-info action">更多测试</a></div>
+                                                             class="btn btn-primary action">重新测试</a><a
+                        class="btn btn-success action" ng-click="toggleShareTip()">炫耀一下</a>
+                </div>
+                <div class="text-center" ng-if="isShare">
+                    <a href="{{roleSceneUrl}}" class="btn btn-primary action">我也要测试</a>
+                    <a ui-sref="roleScene({id:roleScene._id})" class="btn btn-success action">更多测试</a></div>
             </div>
         </div>
     </div>
 </div>
+<div class="share-layer" ng-click="toggleShareTip()">
+    <img src="/assets/images/guide.png"/>
+</div>
+<!--<script type="text/javascript">-->
+    <!--define = null;-->
+    <!--require = null;-->
+<!--</script>-->
+<!--<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>-->
+<!--<script type="text/javascript">-->
+    <!--window.sysinfo = window.sysinfo || {"uniacid":1,"acid":"1","siteroot":"http:\/\/mp.xintianguoji.com.cn\/","siteurl":"http:\/\/mp.xintianguoji.com.cn\/app\/index.php?i=1&c=entry&tid=22&id=220&do=item&m=ceshi&var=11","attachurl":"http:\/\/oss-cn-beijing.aliyuncs.com\/luoyangpai\/","cookie":{"pre":"080b_"},"MODULE_URL":"http:\/\/mp.xintianguoji.com.cn\/addons\/ceshi\/"} || {};-->
+
+    <!--// jssdk config 对象-->
+    <!--jssdkconfig = null || {};-->
+
+    <!--// 是否启用调试-->
+    <!--jssdkconfig.debug = false;-->
+
+    <!--jssdkconfig.jsApiList = [-->
+        <!--'checkJsApi',-->
+        <!--'onMenuShareTimeline',-->
+        <!--'onMenuShareAppMessage',-->
+        <!--'onMenuShareQQ',-->
+        <!--'onMenuShareWeibo',-->
+        <!--'hideMenuItems',-->
+        <!--'showMenuItems',-->
+        <!--'hideAllNonBaseMenuItem',-->
+        <!--'showAllNonBaseMenuItem',-->
+        <!--'translateVoice',-->
+        <!--'startRecord',-->
+        <!--'stopRecord',-->
+        <!--'onRecordEnd',-->
+        <!--'playVoice',-->
+        <!--'pauseVoice',-->
+        <!--'stopVoice',-->
+        <!--'uploadVoice',-->
+        <!--'downloadVoice',-->
+        <!--'chooseImage',-->
+        <!--'previewImage',-->
+        <!--'uploadImage',-->
+        <!--'downloadImage',-->
+        <!--'getNetworkType',-->
+        <!--'openLocation',-->
+        <!--'getLocation',-->
+        <!--'hideOptionMenu',-->
+        <!--'showOptionMenu',-->
+        <!--'closeWindow',-->
+        <!--'scanQRCode',-->
+        <!--'chooseWXPay',-->
+        <!--'openProductSpecificView',-->
+        <!--'addCard',-->
+        <!--'chooseCard',-->
+        <!--'openCard'-->
+    <!--];-->
+
+    <!--wx.config(jssdkconfig);-->
+
+<!--</script>-->
+<!--<script type="text/javascript">-->
+    <!--wx.ready(function () {-->
+        <!--sharedata = {-->
+            <!--title: "11剩下的单身时间是：9个月20天哟~",-->
+            <!--desc: "",-->
+            <!--link: window.location.href + '&fr=share',-->
+            <!--imgUrl: "http://oss-cn-beijing.aliyuncs.com/luoyangpai/images/1/2015/11/wLhOq5MoQRjoMZkMIOlWMJLhqljG4M.jpg",-->
+            <!--success: function(){-->
+                <!--window.location.href = "http://wx.v-tianshi.com/tempIndex.html"-->
+            <!--},-->
+            <!--cancel: function(){-->
+            <!--}-->
+        <!--};-->
+        <!--wx.onMenuShareAppMessage(sharedata);-->
+        <!--wx.onMenuShareTimeline(sharedata);-->
+    <!--});-->
+<!--</script>-->

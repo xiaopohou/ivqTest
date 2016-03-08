@@ -10,12 +10,7 @@ module.exports = {
             './lib/angular/angular.min.js',
             './lib/angular-cookies/angular-cookies.min.js',
             './lib/angular-ui-router/angular-ui-router.min.js',
-            './lib/ui-router-metatags/ui-router-metatags.min.js',
-            './lib/angular-bootstrap/ui-bootstrap.min.js',
-            './lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
-            './lib/underscore/underscore-min.js',
-            './lib/moment/moment.js',
-            './lib/moment/zh-cn.js'
+            './lib/underscore/underscore-min.js'
         ]
     },
     admin: {

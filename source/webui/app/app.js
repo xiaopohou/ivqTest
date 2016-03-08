@@ -1,27 +1,19 @@
 'use strict';
 angular.module('common.config', []);
-angular.module('common.directives', []);
-angular.module('common.filters', []);
 angular.module('common.services', ['common.config', 'common.util']);
 angular.module('common.util', []);
 angular.module('app.templates', []);
 angular.module('app.home', []);
-angular.module('app.nav', []);
-angular.module('app.article', ['ui.bootstrap', 'common.services']);
 angular.module('app.scene', ['common.services']);
 
 var app = angular.module('app', [
     'ngCookies',
     'ui.router',
-    'ui.bootstrap',
     'common.config',
-    'common.directives',
-    'common.filters',
     'common.services',
     'common.util',
     'app.templates',
     'app.home',
-    'app.article',
     'app.scene'
 ]);
 
