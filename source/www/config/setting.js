@@ -14,7 +14,7 @@ module.exports = {
                 {
                     "type": "view",
                     "name": "火影忍者",
-                    "url": "http://120.25.87.172/roleScene/56d68ee7b8df978c0c758379",
+                    "url": "http://www.ivqtest.com/roleScene/56d68ee7b8df978c0c758379",
                     "sub_button": []
                 },
                 {
