@@ -1,6 +1,6 @@
 "use strict";
 angular.module('app.scene')
-    .controller('RoleSceneCtrl', ['$scope', '$rootScope', '$stateParams', '$state', '$window', 'RoleItemChooseService', 'roleScene', 'WechatService', 'WeChatJsConfig', function ($scope, $rootScope, $stateParams, $state, $window, RoleItemChooseService, roleScene, WechatService, WeChatJsConfig) {
+    .controller('RoleSceneCtrl', ['$rootScope', '$scope', '$stateParams', '$state', '$window', 'RoleItemChooseService', 'roleScene', 'WechatService', 'WeChatJsConfig', function ($rootScope, $scope, $stateParams, $state, $window, RoleItemChooseService, roleScene, WechatService, WeChatJsConfig) {
         $scope.roleScene = roleScene;
         $rootScope.metaTitle = $scope.roleScene.title;
 
@@ -36,7 +36,7 @@ angular.module('app.scene')
                     title: title,
                     link: link,
                     imgUrl: imgUrl,
-                    desc: 'ivqTest爱测试，快来测测你的神秘角色',
+                    desc: 'ivqTest爱测试，快来测测你的神秘角色'
                 });
             });
         });

@@ -5,7 +5,9 @@ angular.module('app')
 
         $stateProvider
             .state('/', {
-                url: '/'
+                url: '/',
+                templateUrl: 'home/home.tpl.html',
+                controller: 'HomeCtrl'
             })
             .state('roleScene', {
                 url: '/role-scene/:id',
