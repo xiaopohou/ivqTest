@@ -8,7 +8,7 @@ angular.module('app')
                 url: '/'
             })
             .state('roleScene', {
-                url: '/roleScene/:id',
+                url: '/role-scene/:id',
                 templateUrl: 'scene/role-scene/role-scene.tpl.html',
                 controller: 'RoleSceneCtrl',
                 resolve: {
@@ -18,7 +18,7 @@ angular.module('app')
                 }
             })
             .state('roleItemChoose', {
-                url: '/roleItemChoose/:id/:action',
+                url: '/role-item-choose/:id/:action',
                 templateUrl: 'scene/role-item-choose/role-item-choose.tpl.html',
                 controller: 'RoleItemChooseCtrl',
                 resolve: {

@@ -10,11 +10,7 @@ var uiFolder = "/ui";
 
 //routes
 var accounts = require('./routes/account'),
-    articles = require('./routes/article'),
-    categories = require('./routes/category'),
     users = require('./routes/user'),
-    tags = require('./routes/tag'),
-    comments = require('./routes/comment'),
     plugins = require('./routes/plugin'),
     settings = require('./routes/setting'),
     wechats = require('./routes/wechat'),
@@ -37,7 +33,7 @@ app.use(cookieParser());
 app.use(favicon(__dirname + uiFolder + '/favicon.ico'));
 app.use(express.static(path.join(__dirname, uiFolder)));//TODO:屏蔽访问后端文件
 app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', '');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
     next();
@@ -45,11 +41,7 @@ app.use(function (req, res, next) {
 
 //routes
 app.use(accounts);
-app.use(articles);
-app.use(categories);
 app.use(users);
-app.use(tags);
-app.use(comments);
 app.use(plugins);
 app.use(settings);
 app.use(wechats);
